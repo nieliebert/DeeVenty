@@ -1,0 +1,48 @@
+---
+layout: base.njk
+---
+
+<article class="prose dark:prose-invert max-w-none">
+    <header class="mb-8">
+        <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
+        {% if description %}
+        <p class="text-xl text-gray-600 dark:text-gray-400">{{ description }}</p>
+        {% endif %}
+    </header>
+
+    {% if image %}
+    <div class="mb-8">
+        <img src="{{ image }}" alt="{{ title }}" class="w-full rounded-lg shadow-md">
+    </div>
+    {% endif %}
+
+    {{ content | safe }}
+
+    {% if technologies %}
+    <div class="mt-8">
+        <h2 class="text-2xl font-bold mb-4">Technologies Used</h2>
+        <ul class="flex flex-wrap gap-2">
+            {% for tech in technologies %}
+            <li class="bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full text-sm">{{ tech }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if github_url or demo_url %}
+    <div class="mt-8 flex gap-4">
+        {% if github_url %}
+        <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
+            <span>View on GitHub</span>
+        </a>
+        {% endif %}
+        {% if demo_url %}
+        <a href="{{ demo_url }}" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors">
+            <span>Live Demo</span>
+        </a>
+        {% endif %}
+    </div>
+    {% endif %}
+</article> 

@@ -1,0 +1,12 @@
+---
+title: "Personal Blog Website"
+description: "A modern, responsive blog built with Eleventy and Tailwind CSS featuring dark mode, search functionality, and mobile-first design."
+image: "/assets/images/projects/blog-preview.jpg"
+status: "completed"
+tech: ["Eleventy", "Tailwind CSS", "JavaScript", "Nunjucks", "Markdown"]
+links:
+  github: "https://github.com/username/blog"
+  demo: "https://myblog.com"
+date: 2024-12-01
+layout: project.njk
+--- 

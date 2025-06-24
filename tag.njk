@@ -1,0 +1,59 @@
+---
+layout: base.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+permalink: /tags/{{ tag }}/
+eleventyComputed:
+  title: "Posts tagged with '{{ tag }}'"
+  description: "Posts tagged with #{{ tag }}"
+---
+
+<h1 class="text-4xl font-bold mb-8">Posts tagged with "{{ tag }}"</h1>
+
+{% set posts = collections[tag] %}
+{% for post in posts | reverse %}
+<article class="mb-8">
+    <h2 class="text-2xl font-bold mb-2">
+        <a href="{{ post.url }}" class="hover:text-blue-600 dark:hover:text-blue-400">
+            {{ post.data.title }}
+        </a>
+    </h2>
+    <time class="text-gray-600 dark:text-gray-400 text-sm">
+        {{ post.date | date }}
+    </time>
+    {% if post.data.description %}
+    <p class="mt-2 text-gray-600 dark:text-gray-400">
+        {{ post.data.description }}
+    </p>
+    {% endif %}
+</article>
+{% endfor %}
+
+<div class="mt-8">
+    <a href="/pages/posts/" class="link">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Back to all posts
+    </a>
+</div>
+
+{% else %}
+<div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-900 rounded-lg p-4">
+    <h2 class="text-lg font-bold text-yellow-800 dark:text-yellow-200 mb-2">No Posts Found</h2>
+    <p class="text-yellow-700 dark:text-yellow-300">
+        There are no posts with the tag #{{ tag }} yet.
+    </p>
+    <a href="/pages/posts/" class="link block mt-4">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Back to all posts
+    </a>
+</div>
+{% endif %} 

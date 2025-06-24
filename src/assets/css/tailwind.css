@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply antialiased;
+    }
+    body {
+        @apply min-h-screen;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        @apply w-1.5;
+    }
+    
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-100 dark:bg-gray-800;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-400 dark:bg-gray-500;
+    }
+}
+
+@layer components {
+    .card {
+        @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden;
+    }
+
+    .card-hover {
+        @apply transition-transform duration-200 hover:-translate-y-1;
+    }
+
+    .tag {
+        @apply px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200;
+    }
+
+    .tag-small {
+        @apply px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full text-xs;
+    }
+
+    .link {
+        @apply text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200;
+    }
+
+    .prose {
+        @apply text-gray-600 dark:text-gray-300;
+    }
+
+    .prose a {
+        @apply text-blue-500 hover:text-blue-600 dark:hover:text-blue-400;
+    }
+
+    .prose h1, .prose h2, .prose h3, .prose h4 {
+        @apply text-gray-900 dark:text-white font-bold;
+    }
+
+    .prose blockquote {
+        @apply border-l-4 border-blue-500 pl-4 italic;
+    }
+
+    .prose code {
+        @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono border border-gray-300 dark:border-gray-700 text-blue-600 dark:text-blue-300;
+    }
+
+    .prose pre {
+        @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto border border-gray-300 dark:border-gray-700;
+    }
+
+    .prose pre code {
+        @apply bg-transparent p-0 border-0;
+    }
+
+    .prose img {
+        @apply rounded-lg shadow-lg;
+    }
+
+    .prose table {
+        @apply w-full border-collapse;
+    }
+
+    .prose th, .prose td {
+        @apply border border-gray-200 dark:border-gray-700 px-4 py-2;
+    }
+
+    .prose th {
+        @apply bg-gray-100 dark:bg-gray-800;
+    }
+
+    /* Article styles */
+    .article-title {
+        @apply text-lg font-bold text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200;
+    }
+    
+    .article-meta {
+        @apply text-sm text-gray-500 dark:text-gray-400;
+    }
+    
+    .article-excerpt {
+        @apply text-sm text-gray-600 dark:text-gray-300 leading-relaxed;
+    }
+    
+    /* Section styles */
+    .section {
+        @apply mb-12;
+    }
+    
+    .section-title {
+        @apply text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6;
+    }
+    
+    .section-header {
+        @apply flex justify-between items-center mb-6;
+    }
+    
+    /* Button styles */
+    .btn {
+        @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-200 text-sm;
+    }
+    
+    .btn-primary {
+        @apply btn bg-blue-500 text-white hover:bg-blue-600;
+    }
+    
+    .btn-secondary {
+        @apply btn bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700;
+    }
+}
+
+/* Custom utility overrides */
+@layer utilities {
+    .py-24 {
+        padding-top: 6rem;
+        padding-bottom: 3rem !important;
+    }
+    
+    .text-lg {
+        font-size: 27px !important;
+        line-height: 28px !important;
+    }
+} 

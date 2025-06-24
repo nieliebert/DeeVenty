@@ -1,0 +1,25 @@
+{
+  "lang": "id",
+  "title": "Nuno Liebert",
+  "theme": {
+    "background": "#ffffff",
+    "textColor": "#333333",
+    "headerGradient": "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)"
+  },
+  "layout": {
+    "maxWidth": "48rem"
+  },
+  "content": {
+    "header": {
+      "title": "Nuno Liebert",
+      "subtitle": "Tech & Digital Forensics Enthusiast"
+    }
+  },
+  "config": {
+    "defaultFileName": "untitled.md",
+    "autoSave": true,
+    "autoSaveInterval": 30000,
+    "theme": "default",
+    "enableShortcuts": true
+  }
+} 

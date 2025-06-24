@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "title": "Google Cybersecurity Professional Certificate",
+            "issuer": "Google & Coursera",
+            "image": "/assets/images/certificates/Coursera-Google-Cyber-security.jpg",
+            "url": "/pages/certificates/"
+        },
+        {
+            "title": "Windows Forensics",
+            "issuer": "Coursera",
+            "image": "/assets/images/certificates/Coursera-Windows-Forensics.jpg",
+            "url": "/pages/certificates/"
+        },
+        {
+            "title": "Microsoft & AWS Cloud Introduction",
+            "issuer": "Coursera",
+            "image": "/assets/images/certificates/Coursera-Microsoft-Aws-Introduction.jpg",
+            "url": "/pages/certificates/"
+        },
+        {
+            "title": "Yonsei Big Data Analysis",
+            "issuer": "Yonsei University & Coursera",
+            "image": "/assets/images/certificates/Coursera-Yonsei-Big-Data.jpg",
+            "url": "/pages/certificates/"
+        }
+    ]
+} 

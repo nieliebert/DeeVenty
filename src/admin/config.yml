@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  
+  - name: "projects"
+    label: "Projects"
+    folder: "src/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Technologies", name: "tech", widget: "list" }
+      - label: "Links"
+        name: "links"
+        widget: "object"
+        fields:
+          - { label: "GitHub", name: "github", widget: "string", required: false }
+          - { label: "Demo", name: "demo", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }
+    
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Layout", name: "layout", widget: "select", options: ["base.njk"], default: "base.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  
+  - name: "certificates"
+    label: "Certificates"
+    files:
+      - file: "src/_data/certificates.json"
+        label: "Certificates List"
+        name: "certificates"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Issuer", name: "issuer", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "URL", name: "url", widget: "string" } 
